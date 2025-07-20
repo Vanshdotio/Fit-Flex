@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Tailwind-compatible custom scrollbar with gradient */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, #b29bf7, #f472b6,#a78bfa, #f472b6, rgba(253, 253, 102, 0.705));
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #c084fc, #fb7185);
+}
+
+@font-face {
+  font-family:"This Cafe";
+  src: url("./assets/fonts/ThisCafe.woff2");
+}
+@font-face {
+  font-family:"American Caption";
+  src: url('./assets/fonts/AmericanCaptain.woff2');
+}
+@font-face {
+  font-family:"obvisouly" ;
+  src: url('./assets/fonts/obviously.woff2');
+}
+@font-face {
+  font-family:"Subtil Grotesk" ;
+  src: url("./assets/fonts/subtilGrotesk.woff2");
+}
+.color-text{
+  color: #3B0017;
+}
