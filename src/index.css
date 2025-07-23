@@ -20,19 +20,19 @@ body::-webkit-scrollbar-thumb:hover {
 
 @font-face {
   font-family:"This Cafe";
-  src: url("./assets/fonts/ThisCafe.woff2");
+  src: url("/public/assets/fonts/ThisCafe.woff2");
 }
 @font-face {
   font-family:"American Caption";
-  src: url('./assets/fonts/AmericanCaptain.woff2');
+  src: url('/public/assets/fonts/AmericanCaptain.woff2');
 }
 @font-face {
   font-family:"obvisouly" ;
-  src: url('./assets/fonts/obviously.woff2');
+  src: url('/public/assets/fonts/obviously.woff2');
 }
 @font-face {
   font-family:"Subtil Grotesk" ;
-  src: url("./assets/fonts/subtilGrotesk.woff2");
+  src: url("/public/assets/fonts/SubtilGrotesk.woff2");
 }
 .color-text{
   color: #3B0017;

@@ -1,22 +1,47 @@
 import { useGSAP } from "@gsap/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Nav = () => {
   const gsap = useGSAP();
   const searchRef = useRef();
   const [hover, setHover] = useState(false);
-  const [isHover, setIsHover] = useState(false)
+  const [isHover, setIsHover] = useState(false);
+
+    useEffect(() => {
+    let lastScrollTop = 0;
+
+    const handleScroll = () => {
+      const navbar = document.querySelector(".nav");
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > lastScrollTop) {
+        navbar.style.opacity = "0"; 
+      } else {
+        navbar.style.opacity = "1"; // Show navbar
+      }
+
+      lastScrollTop = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // 🧹 Clean up listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="w-full flex p-2 items-center justify-between bg-[#ffde17] ">
+      <div className="nav fixed top-0 left-0 w-full transition-all duration-400 z-50 select-none flex p-2 items-center justify-between bg-[#ffde17] ">
         <div className="w-40"></div>
         <a
           className="text-[.8rem] font-[Subtil_Grotesk] text-[#3B0017] underline "
           href=""
         >
-          GET 35% OFF ON ALL PRODUCTS 🥳 HURRY UP,
+          GET 35% OFF ON ALL PRODUCTS 🥳, HURRY UP
         </a>
-        <div className=" flex gap-5 mr-3 justify-end font-[obvisouly] text-[#3B0017] ">
+        <div className="flex  gap-5 mr-10 justify-end font-[obvisouly] text-[#3B0017] ">
           <div
             useRef={searchRef}
             className="search flex items-center gap-1 font-[obvisouly] text-[#3B0017] cursor-pointer "
@@ -25,8 +50,8 @@ const Nav = () => {
           >
             <span>
               <svg
-                className={`w-6 h-6 inline-block transform transition-transform duration-200 ease-in-out ${
-                  hover ? "rotate-12 scale-[1.09] " : "text-black"
+                className={`w-6 h-6 inline-block transform transition-transform duration-300 ease-in-out ${
+                  hover ? "rotate-12 scale-[1.09] " : "text-[#3B0017]"
                 }`}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -44,8 +69,8 @@ const Nav = () => {
           >
             <span>
               <svg
-                className={`w-5 h-5 inline-block transform transition-transform duration-200 ease-in-out ${
-                  isHover ? "rotate-12 scale-[1.09] " : "text-black"
+                className={`w-5 h-5 inline-block transform transition-transform duration-500 ease-in-out ${
+                  isHover ? "rotate-12 scale-[1.09] " : "text-[#3B0017] "
                 }`}
                 width="18"
                 height="18"

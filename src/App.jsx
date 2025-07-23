@@ -1,6 +1,8 @@
 import Lenis from "lenis";
 import Nav from "./components/Nav";
-import Home from "./components/Home";
+import Home from "./Pages/Home";
+import CanvasAnimation from "./components/CanvasAnimation";
+
 
 const App = () => {
   // Initialize Lenis
@@ -17,6 +19,7 @@ const App = () => {
     <>
       <Nav />
       <Home />
+      <CanvasAnimation />
     </>
   );
 };
