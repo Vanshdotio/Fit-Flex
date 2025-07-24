@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import CanvasAnimation from "./components/CanvasAnimation";
 
 
+
 const App = () => {
   // Initialize Lenis
   const lenis = new Lenis();

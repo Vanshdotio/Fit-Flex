@@ -31,7 +31,7 @@ const CanvasAnimation = () => {
   // ✅ Image Preload Function
   const preloadImages = () => {
     for (let i = 1; i <= frames.maxIndex; i++) {
-      const imageUrl = `/public/assets/image/frames/frame_${i.toString().padStart(4, "0")}.jpg`;
+      const imageUrl = `/assets/image/frames/frame_${i.toString().padStart(4, "0")}.jpg`;
 
       const img = new Image();
       img.src = imageUrl;
