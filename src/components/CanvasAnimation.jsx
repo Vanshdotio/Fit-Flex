@@ -31,7 +31,7 @@ const CanvasAnimation = () => {
   // ✅ Image Preload Function
   const preloadImages = () => {
     for (let i = 1; i <= frames.maxIndex; i++) {
-      const imageUrl = `/assets/image/frames/frame_${i.toString().padStart(4, "0")}.jpg`;
+      const imageUrl = `/public/assets/image/frames/frame_${i.toString().padStart(4, "0")}.jpg`;
 
       const img = new Image();
       img.src = imageUrl;
@@ -81,9 +81,8 @@ const CanvasAnimation = () => {
       scrollTrigger: {
         trigger: ".parent",
         start: "top top",
-        end: "bottom bottom",
+        end: "bottom top",
         scrub:2,
-        markers:true
       }  
   })
         tl.to(frames,{
@@ -100,7 +99,7 @@ const CanvasAnimation = () => {
 
   return (
           <div className="h-screen  w-full">
-    <div className="parent h-screen relative w-full  top-0 left-0 ">
+    <div className="parent h-[3000px] relative w-full  top-0 left-0 ">
       <div className="sticky top-0 left-0 w-full h-screen">
         <canvas ref={canvasRef} className="w-full h-screen"></canvas>
       </div>
