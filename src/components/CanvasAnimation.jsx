@@ -5,19 +5,6 @@ import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const lenis = new Lenis({ // smooth scroll speed
-  smooth: false,
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-requestAnimationFrame(raf)
-
-// 👇 VERY IMPORTANT: Sync ScrollTrigger
-lenis.on('scroll', ScrollTrigger.update)  
-
 const CanvasAnimation = () => {
   const canvasRef = useRef(null);
   const imagesRef = useRef([]);
@@ -53,6 +40,12 @@ const CanvasAnimation = () => {
     if (!canvas) return;
 
     const context = canvas.getContext("2d");
+    if(!context){
+      console.error("Canvas context not found");
+      return
+    }else{
+      console.log("🎨 Canvas context OK:", context);
+    }
     const img = imagesRef.current[index];
     if (!img) return;
 

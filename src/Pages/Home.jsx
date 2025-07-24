@@ -140,7 +140,7 @@ const Home = () => {
           <div className="mt-10">
             <svg
               width="150"
-              className="-rotate-12 hover:rotate-0 cursor-pointer transform transition duration-400 ease-in-out"
+              className="-rotate-12 hover:rotate-0  transform transition duration-400 ease-in-out !visible cursor-pointer !block pointer-events-auto"
               height="100"
               xmlns="http://www.w3.org/2000/svg"
             >
